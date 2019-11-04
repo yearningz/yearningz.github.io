@@ -1,0 +1,36 @@
+{
+  "name": "personal-site",
+  "version": "2.0.0",
+  "description": "Jie's site ",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "bundle exec jekyll build --watch",
+    "serve": "bundle exec jekyll serve -H 0.0.0.0",
+    "dev": "(npm run build &) && npm run serve",
+    "favicon": "gulp favicon",
+    "icons": "gulp icons",
+    "artwork": "gulp artwork"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yearningz/yearningz.github.io.git"
+  },
+  "keywords": [
+    "blog",
+    "jekyll"
+  ],
+  "author": "yearningz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yearningz/yearningz.github.io/issues"
+  },
+  "homepage": "https://github.com/yearningz/yearningz.github.io/wiki",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-to-ico": "^1.0.0"
+  }
+}
