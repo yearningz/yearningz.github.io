@@ -1,16 +1,16 @@
 ---
 layout: post
-title: React Native开发指南 
+title: React Native的细节汇总 
 key: 20171229
 tags: RN 
 ---
-  
-React Native 是用来开发真正原生，可渲染IOS和Android移动应用的JavaScript框架。  
+## 1 概念    
+1. React Native 是使用JavaScript和React用来开发真正原生，可渲染IOS和Android移动应用的JavaScript框架。  
 React Native 生命周期与React相同，当属性或状态发生改变时，React Native 会重新渲染视图，而于浏览器上的React最大的不同是在于，React Native使用了宿主平台上的UI元素来代替HTML和CSS。 
 
-在React中，virtual DOM类似中间层，介于开发者描述的视图与实际在页面上渲染的视图之间。开发者过度操作DOM对性能影响严重，react维护了一个内存版本的DOM，通过计算得出必要的最小操作并重新渲染。
+2. 在React中，virtual DOM类似中间层，介于开发者描述的视图与实际在页面上渲染的视图之间。开发者过度操作DOM对性能影响严重，react维护了一个内存版本的DOM，通过计算得出必要的最小操作并重新渲染。
 
-react native 调用object-c的api去渲染iOS组件，调用java接口去渲染android组件。
+3. React Native完美兼容使用Objective-C、Java或是Swift编写的组件。react native 调用object-c的api去渲染iOS组件，调用java接口去渲染android组件。
 
 ## 2 React Native的工作原理   
 
@@ -25,7 +25,7 @@ react native 调用object-c的api去渲染iOS组件，调用java接口去渲染a
 
 使用类xml标记来代替调用React.createElement方法传入HTML属性的做法。
 
-flow: facebook公司出的类型检查库。
+flow: facebook出的类型检查库。  
 brew update
 brew upgrade.  
 
@@ -33,7 +33,7 @@ brew upgrade.
 es6语法：
 1. 解构
 2. 导入模块.  
-commonJS  
+commonJS规范
 每个文件是一个模块，有自己的作用域，在一个文件里面定义的变量、函数
 类、都私有。用时再加载。
 > 1. 所有代码运行在模块作用域，不会污染全局作用域。
@@ -41,10 +41,26 @@ commonJS
 > 3. 模块加载顺序，按照其在代码中出现顺序。  
 
 ${}字符串赋值。
-## 3 构建你的第一个应用  
+## 3 构建
+
+**state**   
+  
+* 1. 一切界面变化都是状态state变化。  
+* 2. 必须通过setState()方法
+
+**CSS**     
+   
+* 1.驼峰命名法   
+* 2.StyleSheet.create({})
+
+**受控组件与非受控组件**      
+
+1. 受控组件需要为数据变化的每种方式都编写事件处理函数，并通过一个 React 组件传递所有的输入 state
+
+
 **添加图片背景**
 IOS:在xcode中添加
-android在／androi/app/src/main/res的目录中添加
+android在／android/app/src/main/res的目录中添加
 
 图片内容，通过require进行引入  
 require(image!flowers)语句会触发react native查询名为flowers的文件。  
