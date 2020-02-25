@@ -1,8 +1,8 @@
 ---
 layout: post
-title: javaScript设计模式与开发实践
+title: 《javaScript设计模式与开发实践》笔记
 key: 20180914
-tags: 前端 javascript
+tags: 前端 javascript 笔记
 ---    
 
 ### 1. 面向对象的JavaScript 

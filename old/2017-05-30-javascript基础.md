@@ -14,7 +14,7 @@ ECMAScript是一种语言标准，JavaScript是对ECMAScript标准的一种实�
 > 类型：7种，Number、字符串、布尔值、数组、对象、null和undefined
 > 运算符：比较
 
-1.使用iterable 内置的forEach方法。接收一个函数，每次迭代就自动回调该函数。
+1.使用iterable 内置的forEach方法。接收一个函数，每次迭代就自动回调该函数。   
 2.有JavaScript引擎在行末自动添加分号机制。
 
 #### 2. 严格模式

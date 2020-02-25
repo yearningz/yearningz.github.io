@@ -1,8 +1,8 @@
 ---
 layout: post
-title: React Native的细节汇总 
+title: 《React Native开发指南》笔记 
 key: 20171229
-tags: RN 
+tags: RN 笔记
 ---
 ## 1 概念    
 1. React Native 是使用JavaScript和React用来开发真正原生，可渲染IOS和Android移动应用的JavaScript框架。  

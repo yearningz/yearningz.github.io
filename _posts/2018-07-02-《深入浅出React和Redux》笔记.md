@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 深入浅出React和Redux 
+title: 《深入浅出React和Redux》笔记
 key: 20180702
-tags: React
+tags: React Redux 笔记
 ---    
 
 ### 1.react思维  

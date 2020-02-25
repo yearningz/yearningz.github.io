@@ -1,8 +1,8 @@
 ---
 layout: post
-title: JavaScript忍者秘籍-读书笔记
+title: 《JavaScript忍者秘籍》笔记
 key: 20170820
-tags: javascript reading-notes
+tags: javascript 笔记
 ---
 ### JavaScript忍者秘籍-读书笔记
 #### 调试工具：

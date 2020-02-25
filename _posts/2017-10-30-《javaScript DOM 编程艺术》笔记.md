@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 《javaScript DOM 编程艺术》-入门系列
+title: 《javaScript DOM 编程艺术》笔记
 key: 20171030
-tags: javascript
+tags: javascript 笔记
 ---
 #### 1. javascript简史 
 #### 2. 语法
