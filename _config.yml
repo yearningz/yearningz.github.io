@@ -38,10 +38,13 @@ timezone: Asia/Shanghai
 ## Author & social ##
 author:
   name: "jie"
-  email: 暂无
-  github:  null
-  weibo: null
-  douban: null
+  email: yeazzz@yeah.net
+  github:  test
+  weibo: test
+  douban: test
+  facebook: test
+  linkedin: test
+  googleplus: test
 
 ## Comment system (Disqus) ##
 disqus:
