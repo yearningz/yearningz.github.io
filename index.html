@@ -1,36 +1,17 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="visual-width" content="375">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-
-    <title>Vite + React</title>
-  </head>
-  <body oncontextmenu="return false" ondragstart="return false">
-    <div id="root">
-      <h1>会员图片：</h1>
-      <Image
-              src="https://cloudvip.95516.com/huiyuanzhongxin@2x_20231102163908.png"
-
-      />
-      <Image
-              src="https://cloudvip.95516.com/privilege-yellow@2x.png"
-
-      />
-      <Image
-              src="https://cloudvip.95516.com/exchange-center-yellow@2x.png"
-
-      />
-      <Image
-              src="https://cloudvip.95516.com/coupon-yellow@2x.png"
-
-      />
-      <h1>导航栏图片：</h1>
-      <Image
-              src="https://base.cup.com.cn/s/wl/icon/large/settings_231011.png"
-
-      />
+---
+layout: home-base
+---
+<body>
+    <div class="home" itemscope itemtype="http://schema.org/Person">
+        <div class="main">
+            <div class="content">
+                <div class="my-photo">
+                    <img alt="my photo" src="../statics/images/bg.png" />
+                </div>
+                <h1 itemprop="name" class="title-text">{{ site.author.name }}</h1>
+                {% include info/follow-me.html %}
+                {% include info/site-maps.html %}
+            </div>
+        </div>
     </div>
-  </body>
-</html>
+</body>
