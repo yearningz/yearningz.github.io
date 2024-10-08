@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR 导航页面</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #nav-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- AR.js 基于 A-Frame 场景 -->
+    <a-scene embedded arjs>
+        <!-- 摄像头画面 -->
+        <a-marker preset="hiro">
+            <!-- 在 marker 上显示的 3D 导航模型 -->
+            <a-box position="0 0.5 0" material="color: red;" scale="0.5 0.5 0.5"></a-box>
+            <a-text value="这里是导航点" position="0 1 0" scale="2 2 2"></a-text>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <!-- 导航信息（非 AR 部分） -->
+    <div id="nav-info">
+        当前方向: 北<br>
+        距离目的地: 200米
+    </div>
+    
+    <script>
+        // GPS 定位功能 (假设使用 HTML5 Geolocation API)
+        if ("geolocation" in navigator) {
+            navigator.geolocation.watchPosition((position) => {
+                const { latitude, longitude } = position.coords;
+                console.log(`当前位置: ${latitude}, ${longitude}`);
+                // 这里可以计算用户位置与目的地的距离，并更新导航信息
+                document.getElementById('nav-info').innerHTML = `当前位置: ${latitude.toFixed(6)}, ${longitude.toFixed(6)}<br>距离目的地: 200米`;
+            });
+        } else {
+            console.error("无法获取位置信息");
+        }
+    </script>
+</body>
+</html>
