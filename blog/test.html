@@ -1,97 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR with Geolocation</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        #ar-scene {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        #info {
-            position: absolute;
-            bottom: 20px;
-            left: 10px;
-            z-index: 10;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 8px;
-        }
-    </style>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
-    <!-- AR Scene -->
-    <div id="ar-scene">
-        <a-scene embedded arjs="sourceType: webcam;">
-            <!-- AR中的箭头图标 -->
-            <a-marker preset="hiro">
-                <a-image src="https://upload.wikimedia.org/wikipedia/commons/4/47/Arrow_Up.png" position="0 0 0" scale="0.5 0.5 0"></a-image>
-                <a-entity camera></a-entity>
-            </a-marker>
-        </a-scene>
-    </div>
-
-    <!-- 显示信息 -->
-    <div id="info">
-        <p>将AR标记放置在摄像头前以查看箭头图标。</p>
-        <p id="location-status">正在获取位置...</p>
-        <p id="coordinates">经纬度: 未知</p>
-    </div>
-
-    <!-- 引入依赖的脚本 -->
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.7/aframe/build/aframe-ar.min.js"></script>
-
-    <script>
-        // 检查浏览器是否支持 Geolocation API
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            document.getElementById("location-status").textContent = "Geolocation is not supported by this browser.";
-        }
-
-        // 成功获取位置时调用的函数
-        function showPosition(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-
-            document.getElementById("location-status").textContent = "位置已获取";
-            document.getElementById("coordinates").textContent = "经度: " + longitude + ", 纬度: " + latitude;
-
-            // 在这里可以根据经纬度做其他操作
-            console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-        }
-
-        // 处理错误
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("location-status").textContent = "用户拒绝了获取位置的请求。";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("location-status").textContent = "位置信息不可用。";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("location-status").textContent = "请求用户位置超时。";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("location-status").textContent = "发生未知错误。";
-                    break;
-            }
-        }
-    </script>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 31.23571311124002; longitude:121.66165937288181 " scale="10 10 10"></a-entity>
+</a-scene>
 </body>
 </html>
